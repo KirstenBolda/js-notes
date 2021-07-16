@@ -26,7 +26,70 @@
 
 _Examples:_
 
-- `.toUpperCase()`
+### **`.toUpperCase()`**
+
+```
+const myCat = 'Newton';
+const favoriteFood = 'Tuna Kibble with Gravy'
+console.log(myCat.toUpperCase());
+//returns NEWTON
+
+const favoriteFood = 'Tuna Kibble with Gravy'
+const favoriteFoodCaps = favoriteFood.toUpperCase()
+console.log(favoriteFoodCaps);
+// returns TUNA KIBBLE WITH GRAVY
+
+```
+
+- how to capitalize the first letter of a group of words:
+
+```
+const myCats = ['newton', 'galileo','rutherford']
+
+```
+
+- split the parts of each name into an array and capitalize the first letter of each array element
+
+```
+const capitalizeCats = function(catNames) {
+  const namesUpper = [];
+  for (const name of catNames) {
+    namesUpper.push(name.replace(name[0], name[0].toUpperCase()))
+  }
+  return namesUpper;
+}
+capitalizeCats(myCats);
+// returns ["Newton", "Galileo", "Rutherford"]
+```
+
+- how to capitalize the first letter of each name
+
+```
+const capName = function (fullName) {
+  // split the full name into an array individual names
+  const nameArray  = fullName.split(" ");
+  console.log(nameArray)
+  // create an empty array for the capitalized names
+  const nameCapitalized = []
+  // capitalize the first letter of each name and push each one into the nameArray
+  for (const name of nameArray) {
+    nameCapitalized.push(name.replace(name[0],name[0].toUpperCase()))
+  }
+  // return the nameCapitalized array and join the names into a string
+  return nameCapitalized.join(' ')
+}
+```
+
+- test the capitalize function
+
+```
+const driversLicense = 'beverly ann massey';
+// returns "Beverly Ann Massey"
+
+```
+
+-
+
 - `.toLowerCase()`
 - `.trim()`
 - `.slice()`
@@ -52,33 +115,37 @@ _Examples:_
   - the method name
   - opening and closing parentheses
 
-_Example:_  
+_Example:_
 `Math.random();` : generates a decimal between 0 and 1
 
 - to generate a random number in a range, multipy by the highest number in the range
 
-_Example:_  
+_Example:_
 `Math.random() * 100;`: generates a number between 1 and 100:
 
-_Example:_  
+_Example:_
 `Math.floor();` : rounds a decimal number down to the nearest whole number
 
 ```
-Math.floor(76.129);   // returns 76
+
+Math.floor(76.129); // returns 76
+
 ```
 
-Combine methods: Round down Math.random to nearest whole number  
+Combine methods: Round down Math.random to nearest whole number
 _Example:_
 Generate a random whole number between one and one hundred:
 
 ```
-Math.floor(Math.random() * 100);
+
+Math.floor(Math.random() \* 100);
+
 ```
 
 [MDN: Built-in Math Object methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
 [MDN: Built-in Number Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
-.  
+.
 .
 
 ## Creating Methods
@@ -93,12 +160,14 @@ Math.floor(Math.random() * 100);
 
   **Shorthand Method Syntax**
 
-  ```
+```
+
      start(adverb) {
        console.log(`The engine starts up ${adverb}...`);
      },
       },
-  ```
+
+```
 
 #### Getters
 
@@ -130,74 +199,74 @@ Math.floor(Math.random() * 100);
 
 - also called **iterators**
 - methods called on arrays to manipulate elements and return values
-- [MDN’s Array iteration methods page.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)  
+- [MDN’s Array iteration methods page.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)
   _Examples:_
 
-  - `.forEach()`
-    - calls a function for each element in an array (same output as using the `for` loop)
-    - does not change the array and returns `undefined`
-  - `.map()`
-    - creates a new array with the results of a function call on each element in the array,
-    - the `map()` method must be assigned to a new variable
-  - `.filter()`
-    - creates a new array with the elements that pass the result of a given test,
-    - the `filter()` method must be assigned to a new variable
-    - does not mutate the original array  
-      _Example:_
-    ```
-    // the original array
-    const firstNames = ['Teisha', 'Taylor', 'Pearl', 'Reese', 'Lynne', 'Tegan'];
-    // the filter function
-    const namesLetterT = firstNames.filter( name => {
-      return name[0] === 'T';
-    })
-    // the newly created array
-    console.log(namesLetterT); // logs [ 'Teisha', 'Taylor', 'Tegan' ]
-    ```
-  - `.findIndex()`
-    - returns the first index in an array that passes a given test
-    - useful when working with arrays containing many items
-      returns `-1` if none of the elements in the array satisfies the condition
-  - `.reduce()` -
-
-    - will reduce an array to a single value
-    - seen commonly with numbers, such as finding the sum of all the numbers in an array
-    - does not mutate the original array
-    - the `accumulator` is the first value in the array of numbers, the `currentValue` is the second number in the array
-    - can also take an optional second parameter to set an initial value for `accumulator` (remember, the first argument is the callback function!)
-
+- `.forEach()`
+  - calls a function for each element in an array (same output as using the `for` loop)
+  - does not change the array and returns `undefined`
+- `.map()`
+  - creates a new array with the results of a function call on each element in the array,
+  - the `map()` method must be assigned to a new variable
+- `.filter()`
+  - creates a new array with the elements that pass the result of a given test,
+  - the `filter()` method must be assigned to a new variable
+  - does not mutate the original array
     _Example:_
+  ```
+  // the original array
+  const firstNames = ['Teisha', 'Taylor', 'Pearl', 'Reese', 'Lynne', 'Tegan'];
+  // the filter function
+  const namesLetterT = firstNames.filter( name => {
+    return name[0] === 'T';
+  })
+  // the newly created array
+  console.log(namesLetterT); // logs [ 'Teisha', 'Taylor', 'Tegan' ]
+  ```
+- `.findIndex()`
+  - returns the first index in an array that passes a given test
+  - useful when working with arrays containing many items
+    returns `-1` if none of the elements in the array satisfies the condition
+- `.reduce()` -
 
-    ```
-     const newNumbers = [1, 3, 5, 7];
+  - will reduce an array to a single value
+  - seen commonly with numbers, such as finding the sum of all the numbers in an array
+  - does not mutate the original array
+  - the `accumulator` is the first value in the array of numbers, the `currentValue` is the second number in the array
+  - can also take an optional second parameter to set an initial value for `accumulator` (remember, the first argument is the callback function!)
 
-     const newSum = newNumbers.reduce((accumulator, currentValue) => {
-       console.log('The value of the accumulator: ', accumulator);
-       console.log('The value of the currentValue: ', currentValue);
-       return accumulator + currentValue;
-       }, 10)
-       /* logs:
-       The value of the accumulator:  10
-       The value of the currentValue:  1
-       The value of the accumulator:  11
-       The value of the currentValue:  3
-       The value of the accumulator:  14
-       The value of the currentValue:  5
-       The value of the accumulator:  19
-       The value of the currentValue:  7
-       */
-       console.log(newSum); // logs 26
-    ```
+  _Example:_
 
-  - `.every()`
-  - `.some()`
-  - `.find()`
-    - returns the first value in an array that passes a given test
-    - can help with arrays that contain many values
-  - `.includes()`
-    - iterates through array and evaluates `true` if array element passes test
-  - `.split()`
-    - splits a string at a designated parameter, often a space
+  ```
+   const newNumbers = [1, 3, 5, 7];
+
+   const newSum = newNumbers.reduce((accumulator, currentValue) => {
+     console.log('The value of the accumulator: ', accumulator);
+     console.log('The value of the currentValue: ', currentValue);
+     return accumulator + currentValue;
+     }, 10)
+     /* logs:
+     The value of the accumulator:  10
+     The value of the currentValue:  1
+     The value of the accumulator:  11
+     The value of the currentValue:  3
+     The value of the accumulator:  14
+     The value of the currentValue:  5
+     The value of the accumulator:  19
+     The value of the currentValue:  7
+     */
+     console.log(newSum); // logs 26
+  ```
+
+- `.every()`
+- `.some()`
+- `.find()`
+  - returns the first value in an array that passes a given test
+  - can help with arrays that contain many values
+- `.includes()`
+  - iterates through array and evaluates `true` if array element passes test
+- `.split()`
+  - splits a string at a designated parameter, often a space
 
 ---
 
@@ -207,3 +276,7 @@ Math.floor(Math.random() * 100);
 - `.charAt(i)` where `i` is the index position of the letter you want to return
 
 ---
+
+```
+
+```
