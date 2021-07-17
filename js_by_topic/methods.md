@@ -28,9 +28,11 @@ _Examples:_
 
 ### **`.toUpperCase()`**
 
+- capitalize all letters in the value entered
+
 ```
 const myCat = 'Newton';
-const favoriteFood = 'Tuna Kibble with Gravy'
+
 console.log(myCat.toUpperCase());
 //returns NEWTON
 
@@ -41,7 +43,7 @@ console.log(favoriteFoodCaps);
 
 ```
 
-- how to capitalize the first letter of a group of words:
+- how to capitalize the first letter of an array of words:
 
 ```
 const myCats = ['newton', 'galileo','rutherford']
@@ -66,12 +68,12 @@ capitalizeCats(myCats);
 
 ```
 const capName = function (fullName) {
-  // split the full name into an array individual names
+  // split the full name into an array of individual names
   const nameArray  = fullName.split(" ");
   console.log(nameArray)
   // create an empty array for the capitalized names
   const nameCapitalized = []
-  // capitalize the first letter of each name and push each one into the nameArray
+  // use .replace() to capitalize the first letter of each name and push each name into the nameArray
   for (const name of nameArray) {
     nameCapitalized.push(name.replace(name[0],name[0].toUpperCase()))
   }
@@ -83,14 +85,15 @@ const capName = function (fullName) {
 - test the capitalize function
 
 ```
-const driversLicense = 'beverly ann massey';
-// returns "Beverly Ann Massey"
+const driversLicense = 'beverly ann collins';
+// returns "Beverly Ann Collins"
 
 ```
 
 -
 
-- `.toLowerCase()`
+### **`.toLowerCase()`**
+
 - `.trim()`
 - `.slice()`
 - `.join()`
