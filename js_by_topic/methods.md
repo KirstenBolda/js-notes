@@ -23,12 +23,15 @@
   - the dot operator
   - the method name
   - opening and closing parentheses
+- string methods return strings so they can be chained
 
-_Examples:_
+## _Examples:_
 
 ### **`.toUpperCase()`**
 
 - capitalize all letters in the value entered
+
+_Example:_
 
 ```
 const myCat = 'Newton';
@@ -42,6 +45,8 @@ console.log(favoriteFoodCaps);
 // returns TUNA KIBBLE WITH GRAVY
 
 ```
+
+_Example:_
 
 - how to capitalize the first letter of an array of words:
 
@@ -64,7 +69,9 @@ capitalizeCats(myCats);
 // returns ["Newton", "Galileo", "Rutherford"]
 ```
 
-- how to capitalize the first letter of each name
+_Example:_
+
+- how to capitalize the first letter of each part of a name
 
 ```
 const capName = function (fullName) {
@@ -85,25 +92,55 @@ const capName = function (fullName) {
 - test the capitalize function
 
 ```
-const driversLicense = 'beverly ann collins';
-// returns "Beverly Ann Collins"
-
+const inventor = 'alan mathison turing';
+capName(inventor);
+// returns "Alan Mathison Turing"
 ```
-
--
 
 ### **`.toLowerCase()`**
 
-- `.trim()`
-- `.slice()`
-- `.join()`
-- `.replace()`
-- `.replaceAll()`
-- `.startsWith()`
-- `.endsWith()`
-- `.padStart()`
-- `.padEnd()`
-- `.repeat()`
+- convert all letters in the valued entered to lower case
+
+_Example:_
+
+```
+const catFood = 'Kibbles';
+console.log(catFood.toLowerCase());
+// returns kibbles (string)
+```
+
+### **`.trim`**
+
+- removes white space from both beginning and end of string
+- after ES2019 .trimStart() and .trimEnd() can trim from beginning or the end of a string
+
+_Example:_
+
+```
+const catPerch = '  couch   '
+console.log(catPerch.trim())
+// returns couch
+```
+
+_Example with chaining:_
+
+### **`.slice`**
+
+### **`.join`**
+
+### **`.replace`**
+
+### **`.replaceAll()`**
+
+### **`.startsWith()`**
+
+### **`.endsWith()`**
+
+### **`.padStart()`**
+
+### **`.padEnd()`**
+
+### **`.repeat()`**
 
 [Complete list of built in string methods at MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
