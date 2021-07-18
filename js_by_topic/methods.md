@@ -124,9 +124,47 @@ console.log(catPerch.trim())
 
 _Example with chaining:_
 
+- note that string methods can be used directly on the string
+
+```
+console.log(' CatNip  '.toLowerCase().trim())
+// returns catnip
+```
+
 ### **`.slice`**
 
+- cuts the string off at the first parameter and returns a substring with characters remaining after the slice, beginning with the character at the input location
+
+_Example:_
+
+```
+const catType = 'Abyssinian'
+console.log(catType.slice(5))
+// returns: inian
+```
+
+- inputting two parameters, start and end, returns a substring including the first parameter, but not the end parameter character
+
+```
+const catType = 'Maine Coon'
+console.log(catType.slice(0, 5))
+// returns: Maine
+```
+
+### **`.split`**
+
+- break the string into an array separated by the character input
+  _Example:_
+
+```
+const catToys = 'pompom+catnip+feather';
+console.log(catToys.split('+'));
+// returns ["pompom", "catnip", "feather"]
+
 ### **`.join`**
+
+- joins all the elements of an array into a string with the character input between them
+- opposite of split
 
 ### **`.replace`**
 
@@ -141,6 +179,8 @@ _Example with chaining:_
 ### **`.padEnd()`**
 
 ### **`.repeat()`**
+
+### **`.indexOf()`**
 
 [Complete list of built in string methods at MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
@@ -253,60 +293,64 @@ Math.floor(Math.random() \* 100);
   - the `filter()` method must be assigned to a new variable
   - does not mutate the original array
     _Example:_
-  ```
-  // the original array
-  const firstNames = ['Teisha', 'Taylor', 'Pearl', 'Reese', 'Lynne', 'Tegan'];
-  // the filter function
-  const namesLetterT = firstNames.filter( name => {
-    return name[0] === 'T';
-  })
-  // the newly created array
-  console.log(namesLetterT); // logs [ 'Teisha', 'Taylor', 'Tegan' ]
-  ```
+```
+
+// the original array
+const firstNames = ['Teisha', 'Taylor', 'Pearl', 'Reese', 'Lynne', 'Tegan'];
+// the filter function
+const namesLetterT = firstNames.filter( name => {
+return name[0] === 'T';
+})
+// the newly created array
+console.log(namesLetterT); // logs [ 'Teisha', 'Taylor', 'Tegan' ]
+
+```
 - `.findIndex()`
-  - returns the first index in an array that passes a given test
-  - useful when working with arrays containing many items
-    returns `-1` if none of the elements in the array satisfies the condition
+- returns the first index in an array that passes a given test
+- useful when working with arrays containing many items
+  returns `-1` if none of the elements in the array satisfies the condition
 - `.reduce()` -
 
-  - will reduce an array to a single value
-  - seen commonly with numbers, such as finding the sum of all the numbers in an array
-  - does not mutate the original array
-  - the `accumulator` is the first value in the array of numbers, the `currentValue` is the second number in the array
-  - can also take an optional second parameter to set an initial value for `accumulator` (remember, the first argument is the callback function!)
+- will reduce an array to a single value
+- seen commonly with numbers, such as finding the sum of all the numbers in an array
+- does not mutate the original array
+- the `accumulator` is the first value in the array of numbers, the `currentValue` is the second number in the array
+- can also take an optional second parameter to set an initial value for `accumulator` (remember, the first argument is the callback function!)
 
-  _Example:_
+_Example:_
 
-  ```
-   const newNumbers = [1, 3, 5, 7];
+```
 
-   const newSum = newNumbers.reduce((accumulator, currentValue) => {
-     console.log('The value of the accumulator: ', accumulator);
-     console.log('The value of the currentValue: ', currentValue);
-     return accumulator + currentValue;
-     }, 10)
-     /* logs:
-     The value of the accumulator:  10
-     The value of the currentValue:  1
-     The value of the accumulator:  11
-     The value of the currentValue:  3
-     The value of the accumulator:  14
-     The value of the currentValue:  5
-     The value of the accumulator:  19
-     The value of the currentValue:  7
-     */
-     console.log(newSum); // logs 26
-  ```
+const newNumbers = [1, 3, 5, 7];
+
+const newSum = newNumbers.reduce((accumulator, currentValue) => {
+console.log('The value of the accumulator: ', accumulator);
+console.log('The value of the currentValue: ', currentValue);
+return accumulator + currentValue;
+}, 10)
+/_ logs:
+The value of the accumulator: 10
+The value of the currentValue: 1
+The value of the accumulator: 11
+The value of the currentValue: 3
+The value of the accumulator: 14
+The value of the currentValue: 5
+The value of the accumulator: 19
+The value of the currentValue: 7
+_/
+console.log(newSum); // logs 26
+
+```
 
 - `.every()`
 - `.some()`
 - `.find()`
-  - returns the first value in an array that passes a given test
-  - can help with arrays that contain many values
+- returns the first value in an array that passes a given test
+- can help with arrays that contain many values
 - `.includes()`
-  - iterates through array and evaluates `true` if array element passes test
+- iterates through array and evaluates `true` if array element passes test
 - `.split()`
-  - splits a string at a designated parameter, often a space
+- splits a string at a designated parameter, often a space
 
 ---
 
@@ -316,6 +360,8 @@ Math.floor(Math.random() \* 100);
 - `.charAt(i)` where `i` is the index position of the letter you want to return
 
 ---
+
+```
 
 ```
 
