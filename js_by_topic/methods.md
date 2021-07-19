@@ -154,25 +154,52 @@ console.log(catType.slice(0, 5))
 ### **`.split`**
 
 - break the string into an array separated by the character input
-  _Example:_
+
+_Example:_
 
 ```
 const catToys = 'pompom+catnip+feather';
 console.log(catToys.split('+'));
 // returns ["pompom", "catnip", "feather"]
+```
 
 ### **`.join`**
 
 - joins all the elements of an array into a string with the character input between them
-- opposite of split
+- opposite of `.split()` method
+
+_Example:_
+
+```
+const catTreats = ["kibbles", "catnip", "tuna"];
+console.log(catTreats.join('+'));
+// returns kibbles+catnip+tuna
+```
 
 ### **`.replace`**
 
+- replace a part of a string with another substring
+- creates a new string, doesn't mutate the original string
+
+_Example:_
+
+```
+const favoriteActivities = 'Jumping and hiding and chasing.';
+console.log(favoriteActivities.replace('chasing','sleeping'));
+// returns Jumping and hiding and sleeping.
+```
+
 ### **`.replaceAll()`**
 
-### **`.startsWith()`**
+- replaces all occurences of a string with the second parameter string
 
-### **`.endsWith()`**
+_Example:_
+
+```
+const todaysSchedule = 'Each cat should have 15 chicken kibbles and one can of beef slices. Then, before bed, 5 more chicken kibbles.';
+console.log(todaysSchedule.replaceAll('chicken','tuna'));
+// returns: Each cat should have 15 tuna kibbles and one can of beef slices. Then, before bed, 5 more tuna kibbles.
+```
 
 ### **`.padStart()`**
 
@@ -181,6 +208,23 @@ console.log(catToys.split('+'));
 ### **`.repeat()`**
 
 ### **`.indexOf()`**
+
+## Boolean String Methods
+
+### **`.includes()`**
+
+- returns true if a string combination is somewhere in the string
+  _Example:_
+
+```
+const favoriteFoods = 'Jumping and hiding and chasing.';
+console.log(favoriteActivities.replace('chasing','sleeping'));
+// returns Jumping and hiding and sleeping.
+```
+
+### **`.startsWith()`**
+
+### **`.endsWith()`**
 
 [Complete list of built in string methods at MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
@@ -293,6 +337,7 @@ Math.floor(Math.random() \* 100);
   - the `filter()` method must be assigned to a new variable
   - does not mutate the original array
     _Example:_
+
 ```
 
 // the original array
@@ -305,6 +350,7 @@ return name[0] === 'T';
 console.log(namesLetterT); // logs [ 'Teisha', 'Taylor', 'Tegan' ]
 
 ```
+
 - `.findIndex()`
 - returns the first index in an array that passes a given test
 - useful when working with arrays containing many items
@@ -360,6 +406,8 @@ console.log(newSum); // logs 26
 - `.charAt(i)` where `i` is the index position of the letter you want to return
 
 ---
+
+```
 
 ```
 
