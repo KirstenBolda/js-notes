@@ -203,11 +203,53 @@ console.log(todaysSchedule.replaceAll('chicken','tuna'));
 
 ### **`.padStart()`**
 
+- pad the string to the desired length by adding characters to the beginning
+- two arguments: first desired length of the string, second the character for padding
+
+_Example:_
+
+```
+const catTalk = 'Meow';
+console.log(catTalk.padStart('10', '*'))
+// returns '******Meow'
+```
+
 ### **`.padEnd()`**
+
+- pad the string to the desired length by adding characters to the end
+- two arguments: first desired length of the string, second the character for padding
+
+_Example:_
+
+```
+const catTalk2 = 'Meow';
+console.log(catTalk2.padEnd('12', '*'))
+// returns 'Meow********'
+```
 
 ### **`.repeat()`**
 
+- repeats the string the number of times in the parameter
+
+_Example:_
+
+```
+const hungryCat = 'Meow ';
+console.log(hungryCat.repeat(6));
+// returns 'Meow Meow Meow Meow Meow Meow '
+```
+
 ### **`.indexOf()`**
+
+- returns the position of the first occurrence of the letter or string in the parameter
+
+_Example:_
+
+```
+const randomString = 'nDii!JZ-L-EFuraQHdT!xYr_UchUmb';
+console.log(randomString.indexOf('!'))
+// returns 4
+```
 
 ## Boolean String Methods
 
