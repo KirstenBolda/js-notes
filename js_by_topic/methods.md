@@ -214,17 +214,58 @@ console.log(todaysSchedule.replaceAll('chicken','tuna'));
 ### **`.includes()`**
 
 - returns true if a string combination is somewhere in the string
-  _Example:_
+
+_Example:_
 
 ```
-const favoriteFoods = 'Jumping and hiding and chasing.';
-console.log(favoriteActivities.replace('chasing','sleeping'));
-// returns Jumping and hiding and sleeping.
+const favoriteFoods = 'chicken, tuna, beef, cheese.';
+console.log(favoriteFoods.includes('tuna'));
+// returns true
+console.log(favoriteFoods.includes('turkey'));
+// returns false
+```
+
+_Example:_
+
+- search a long string
+
+```
+console.log('bMD3tM7Hxyvqw4vLs9igkUrZryTD8ep9s8rL'.includes('1'));
+// returns false
+console.log('bMD3tM7Hxyvqw4vLs9igkUrZryTD8ep9s8rL'.includes(9));
+// returns true for both '9' and 9
+console.log('bMD3tM7Hxyvqw4vLs9igkUrZryTD8ep9s8rL'.includes('TD'));
+// returns true
 ```
 
 ### **`.startsWith()`**
 
+- returns true if the string combination is at the beginning of the string
+
+_Example:_
+
+```
+const favoriteFoods = 'chicken, tuna, beef, cheese.';
+console.log(favoriteFoods.startsWith('chick'));
+// returns true
+console.log(favoriteFoods.startsWith('cheese'));
+// returns false
+```
+
 ### **`.endsWith()`**
+
+- returns true if the string combination is at the end of the string
+  _Example:_
+
+```
+const favoriteFoods = 'chicken, tuna, beef, cheese.';
+console.log(favoriteFoods.endsWith('chick'));
+// returns false
+console.log(favoriteFoods.endsWith('cheese'));
+// returns true
+```
+
+---
 
 [Complete list of built in string methods at MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
