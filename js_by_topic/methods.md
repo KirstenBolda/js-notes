@@ -322,31 +322,62 @@ console.log(favoriteFoods.endsWith('cheese'));
   - the method name
   - opening and closing parentheses
 
-_Example:_
-`Math.random();` : generates a decimal between 0 and 1
+### **`Math.random()`**
+
+- generates a decimal between 0 and 1
 
 - to generate a random number in a range, multipy by the highest number in the range
 
 _Example:_
 `Math.random() * 100;`: generates a number between 1 and 100:
 
-_Example:_
-`Math.floor();` : rounds a decimal number down to the nearest whole number
+### **`Math.floor()`**
+
+- rounds a decimal number down to the nearest whole number
+  _Example:_
 
 ```
-
 Math.floor(76.129); // returns 76
-
 ```
 
-Combine methods: Round down Math.random to nearest whole number
+### **`Math.ceil()`**
+
+- rounds a decimal number down to the nearest whole number
+  _Example:_
+
+```
+Math.ceil(76.129); // returns 77
+```
+
+Combine methods: Round down `Math.random()` to nearest whole number
+
 _Example:_
 Generate a random whole number between one and one hundred:
 
 ```
+Math.floor(Math.random() \* 100); // returns an integer between one and one hundred
+```
 
-Math.floor(Math.random() \* 100);
+### **`Math.max()` and `Math.min()`**
 
+- returns the largest or smallest of the numbers passed in as parameters
+  _Examples:_
+
+```
+Math.max(4, 7.5, 18, 63.2, 2.8, 3.45); // returns 63.2
+
+Math.min(4, 7.5, 18, 63.2, 2.8, 3.45); // returns 2.8
+```
+
+### **`Math.pow()`**
+
+- returns the base number to an exponent
+- takes two parameters
+
+  _Example:_
+
+```
+Math.pow(2, 10); // returns 1024
 ```
 
 [MDN: Built-in Math Object methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
