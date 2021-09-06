@@ -380,11 +380,99 @@ Math.min(4, 7.5, 18, 63.2, 2.8, 3.45); // returns 2.8
 Math.pow(2, 10); // returns 1024
 ```
 
+### **`Math.sqrt()`**
+
+- returns the square root of the parameter
+
+  _Example:_
+
+```
+Math.sqrt(4); // returns 2
+```
+
+### **`.toFixed`**
+
+- formats the number using fixed-point notation
+- the parameter is the number of digits, omitting the parameter returns 0 digits after the decimal point
+
+  _Example:_
+
+```
+Math.sqrt(3).toFixed(2) // returns 1.73
+```
+
 [MDN: Built-in Math Object methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
 [MDN: Built-in Number Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
 .
-.
+
+---
+
+## Array Methods
+
+### Mutate the original array by adding elements:
+
+### **`.push()`**
+
+- add an element to the end of the array
+
+  _Example:_
+
+```
+const cats = ['Siamese', 'Ragdoll', 'Angora']
+cats.push('Tabby'))
+console.log(cats) // returns ['Siamese', 'Ragdoll', 'Angora', 'Tabby']
+```
+
+### **`.unshift()`**
+
+- add an element to the beginning of the array
+  _Example:_
+
+```
+const cats = ['Siamese', 'Ragdoll', 'Angora', 'Tabby']
+cats.unshift('Maine Coon')
+console.log(cats); // returns ['Maine Coon', 'Siamese', 'Ragdoll', 'Angora', 'Tabby']
+```
+
+### Mutate the original array by removing elements:
+
+### **`.pop()`**
+
+- remove an element from the end of the array
+- returns the last element of the array
+  _Example:_
+
+```
+const cats = ['Siamese', 'Ragdoll', 'Angora', 'Tabby']
+cats.pop() // returns 'Tabby'
+console.log(cats); // returns ['Siamese', 'Ragdoll', 'Angora']
+```
+
+### **`.shift()`**
+
+- remove an element from the start of the array
+- returns the first element of the array
+  _Example:_
+
+```
+const cats = ['Siamese', 'Ragdoll', 'Angora']
+cats.shift() // returns 'Siamese'
+console.log(cats); // returns ['Ragdoll', 'Angora']
+```
+
+### **`.splice()`**
+
+- removes specified elements from the array
+- elements after first parameter are removed
+- second parameter indicates the number of elements to be removed
+  _Example:_
+
+```
+const cats = ['Siamese', 'Ragdoll', 'Angora']
+cats.shift() // returns 'Siamese'
+console.log(cats); // returns ['Ragdoll', 'Angora']
+```
 
 ## Creating Methods
 
