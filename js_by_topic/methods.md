@@ -410,6 +410,8 @@ Math.sqrt(3).toFixed(2) // returns 1.73
 
 # Array Methods
 
+## **Mutate the original array**
+
 ## Mutate the original array by adding elements:
 
 ### **`.push()`**
@@ -436,7 +438,7 @@ cats.unshift('Maine Coon')
 console.log(cats); // returns ['Maine Coon', 'Siamese', 'Ragdoll', 'Angora', 'Tabby']
 ```
 
-### Mutate the original array by removing elements:
+## Mutate the original array by removing elements:
 
 ### **`.pop()`**
 
@@ -478,7 +480,7 @@ cats.splice(2, 3) // returns ['Angora', 'Tabby', 'Maine Coon']
 console.log(cats); // returns ['Siamese', 'Ragdoll', 'Burmese']
 ```
 
-### Mutate the original array without changing the number of elements:
+## Mutate the original array without changing the number of elements:
 
 ### **`.reverse()`**
 
@@ -520,7 +522,7 @@ cats.fill('Tabby', 1, 3) // returns ['Maine Coon', 'Tabby', 'Tabby', 'Burmese', 
 console.log(cats); // returns ['Maine Coon', 'Tabby', 'Tabby', 'Burmese', 'Siamese']
 ```
 
-## Create a new array based on the original array:
+## **Create a new array**
 
 ### **`.map()`**
 
@@ -534,6 +536,70 @@ const agesOlder = catAges.map(age => age + 2)
 console.log(catAges); // returns [1, 3, 5, 7, 11]
 console.log(agesOlder); // returns [3, 5, 7, 9, 13]
 ```
+
+### **`.filter()`**
+
+- creates a new array including only elements that pass a test provided in the callback function
+- _Example:_
+
+```
+const catAges = [1, 3, 7, 11, 15]
+const seniorKitties = catAges.filter(age => age >= 10)
+
+console.log(catAges); // returns same array: [1, 3, 7, 11, 15]
+console.log(seniorKitties); // returns new array: [11, 15]
+```
+
+### **`.slice()`**
+
+- creates a new array including a portion of the array determined by the method's parameters
+- _Example:_
+
+```
+const cats = ['Tabby', 'Siamese', 'Ragdoll', 'Angora', 'Persian', 'Burmese']
+const longhairedCats = cats.slice(2, 5)
+
+console.log(cats); // returns same array: ['Tabby', 'Siamese', 'Ragdoll', 'Angora', 'Persian', 'Burmese']
+console.log(longhairedCats); // returns new array: ['Ragdoll', 'Angora', 'Persian']
+```
+
+### **`.concat()`**
+
+- merge two or more arrays into a new array
+- _Example:_
+
+```
+const shorthairCats = ['Tabby', 'Siamese', 'Burmese']
+const longhairCats = ['Ragdoll', 'Angora', 'Persian']
+
+const allCats = shorthairCats.concat(longhairCats)
+
+console.log(allCats); // returns new array: ['Tabby', 'Siamese', 'Burmese', 'Ragdoll', 'Angora', 'Persian']
+// both original arrays remain the same
+```
+
+### **`.flat()`**
+
+- creates a new array including elements of the subarrays
+- parameter specifies depth of arrays to flatten
+- _Example:_
+
+```
+const allCats = ['Tabby', 'Siamese', 'Burmese', ['Ragdoll', 'Angora', 'Persian', ['Sphynx']]]
+
+const flatCats = allCats.flat()
+console.log(flatCats); // returns new array:['Tabby', 'Siamese', 'Burmese', 'Ragdoll', 'Angora', 'Persian', Array(1)]
+// original array remains the same
+
+const flatterCats = allCats.flat(2)
+console.log(flatterCats); // returns new array: ['Tabby', 'Siamese', 'Burmese', 'Ragdoll', 'Angora', 'Persian', 'Sphynx']
+```
+
+### **`.flatMap()`**
+
+- apply a callback function to each element by looping, then flattening the result
+- can flatten only one level
+- improves performance by combining `.flat` and `.map` methods into one method
 
 ## Creating Methods
 
