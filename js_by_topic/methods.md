@@ -1,4 +1,4 @@
-## **Methods**
+# **Methods**
 
 ---
 
@@ -15,7 +15,7 @@
 
 ---
 
-## Built-in String Methods
+# Built-in String Methods
 
 **Calling a built-in string method:**
 
@@ -313,7 +313,7 @@ console.log(favoriteFoods.endsWith('cheese'));
 
 ---
 
-## Built-in Math Methods
+# Built-in Math Methods
 
 **Calling a built-in Math method:**
 
@@ -408,9 +408,9 @@ Math.sqrt(3).toFixed(2) // returns 1.73
 
 ---
 
-## Array Methods
+# Array Methods
 
-### Mutate the original array by adding elements:
+## Mutate the original array by adding elements:
 
 ### **`.push()`**
 
@@ -421,6 +421,7 @@ Math.sqrt(3).toFixed(2) // returns 1.73
 ```
 const cats = ['Siamese', 'Ragdoll', 'Angora']
 cats.push('Tabby'))
+
 console.log(cats) // returns ['Siamese', 'Ragdoll', 'Angora', 'Tabby']
 ```
 
@@ -446,6 +447,7 @@ console.log(cats); // returns ['Maine Coon', 'Siamese', 'Ragdoll', 'Angora', 'Ta
 ```
 const cats = ['Siamese', 'Ragdoll', 'Angora', 'Tabby']
 cats.pop() // returns 'Tabby'
+
 console.log(cats); // returns ['Siamese', 'Ragdoll', 'Angora']
 ```
 
@@ -458,6 +460,7 @@ console.log(cats); // returns ['Siamese', 'Ragdoll', 'Angora']
 ```
 const cats = ['Siamese', 'Ragdoll', 'Angora']
 cats.shift() // returns 'Siamese'
+
 console.log(cats); // returns ['Ragdoll', 'Angora']
 ```
 
@@ -469,9 +472,67 @@ console.log(cats); // returns ['Ragdoll', 'Angora']
   _Example:_
 
 ```
-const cats = ['Siamese', 'Ragdoll', 'Angora']
-cats.shift() // returns 'Siamese'
-console.log(cats); // returns ['Ragdoll', 'Angora']
+const cats = ['Siamese', 'Ragdoll', 'Angora', 'Tabby', 'Maine Coon', 'Burmese']
+cats.splice(2, 3) // returns ['Angora', 'Tabby', 'Maine Coon']
+
+console.log(cats); // returns ['Siamese', 'Ragdoll', 'Burmese']
+```
+
+### Mutate the original array without changing the number of elements:
+
+### **`.reverse()`**
+
+- reverses the order of the elements in the array
+
+  _Example:_
+
+```
+const cats = ['Siamese', 'Ragdoll', 'Angora', 'Tabby', 'Maine Coon', 'Burmese']
+cats.sort() // returns ['Angora', 'Burmese', 'Maine Coon', 'Ragdoll', 'Siamese', 'Tabby']
+
+console.log(cats); // returns ['Tabby', 'Angora', 'Ragdoll', 'Siamese']
+```
+
+### **`.sort()`**
+
+- sorts the elements in the array by converting them into strings and comparing their sequences to UTF-16 units values
+
+  _Example:_
+
+```
+const cats = ['Siamese', 'Ragdoll', 'Angora', 'Tabby']
+cats.reverse() // returns ['Tabby', 'Angora', 'Ragdoll', 'Siamese']
+console.log(cats); // returns ['Tabby', 'Angora', 'Ragdoll', 'Siamese']
+```
+
+### **`.fill()`**
+
+- changes all the selected elements to a static value
+- first parameter is the static value
+- second parameter is start index (default 0)
+- third parameter is end index (default array.length)
+
+  _Example:_
+
+```
+const cats = ['Maine Coon', 'Ragdoll', 'Angora', 'Burmese', 'Siamese']
+cats.fill('Tabby', 1, 3) // returns ['Maine Coon', 'Tabby', 'Tabby', 'Burmese', 'Siamese']
+console.log(cats); // returns ['Maine Coon', 'Tabby', 'Tabby', 'Burmese', 'Siamese']
+```
+
+## Create a new array based on the original array:
+
+### **`.map()`**
+
+- creates a new array by looping through the array with a callback function
+- _Example:_
+
+```
+const catAges = [1, 3, 5, 7, 11]
+const agesOlder = catAges.map(age => age + 2)
+
+console.log(catAges); // returns [1, 3, 5, 7, 11]
+console.log(agesOlder); // returns [3, 5, 7, 9, 13]
 ```
 
 ## Creating Methods
