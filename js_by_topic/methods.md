@@ -718,7 +718,40 @@ const adultCats = age => age >= 1;
 console.log(catAges.every(adultCats)) // returns false
 ```
 
-## Creating Methods
+## **Transform an array to a value**
+
+### **`.reduce()`**
+
+- executes the callback function on each element of the array and passes the return value from the calculation on the preceding element
+- returns a single value
+
+Example:
+
+```
+const numKittens = [5, 3, 6, 4, 3, 7]
+
+const totalKittens = (totalCats, nextLitter) => totalCats + nextLitter
+
+console.log(numKittens.reduce(totalKittens)) // returns 28
+```
+
+## **Loop over an array**
+
+### **`.forEach()`**
+
+- executes the callback function once for each array element
+
+Example:
+
+```
+const myCats = ['Buster', 'Charlie', 'Sheba', 'Mittens']
+
+myCats.forEach(catName => console.log(catName))
+```
+
+---
+
+## **Creating Methods**
 
 - may be defined using anonymous arrow function expressions
 
