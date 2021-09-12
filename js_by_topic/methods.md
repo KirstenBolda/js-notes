@@ -412,7 +412,12 @@ Math.sqrt(3).toFixed(2) // returns 1.73
 
 ## **Mutate the original array**
 
-## Mutate the original array by adding elements:
+- three ways to mutate the array:
+  - add elements
+  - remove elements
+  - change the order of the array elements
+
+### Mutate the original array by adding elements:
 
 ### **`.push()`**
 
@@ -438,7 +443,7 @@ cats.unshift('Maine Coon')
 console.log(cats); // returns ['Maine Coon', 'Siamese', 'Ragdoll', 'Angora', 'Tabby']
 ```
 
-## Mutate the original array by removing elements:
+### Mutate the original array by removing elements:
 
 ### **`.pop()`**
 
@@ -480,7 +485,7 @@ cats.splice(2, 3) // returns ['Angora', 'Tabby', 'Maine Coon']
 console.log(cats); // returns ['Siamese', 'Ragdoll', 'Burmese']
 ```
 
-## Mutate the original array without changing the number of elements:
+### Mutate the original array without changing the number of elements:
 
 ### **`.reverse()`**
 
@@ -523,6 +528,13 @@ console.log(cats); // returns ['Maine Coon', 'Tabby', 'Tabby', 'Burmese', 'Siame
 ```
 
 ## **Create a new array**
+
+- five ways to create a new array based on the original:
+  - compute from the original via a callback function
+  - filter with a condition
+  - copy a portion of the original array
+  - add several arrays together to create a new array
+  - flatten the original array
 
 ### **`.map()`**
 
@@ -600,6 +612,111 @@ console.log(flatterCats); // returns new array: ['Tabby', 'Siamese', 'Burmese', 
 - apply a callback function to each element by looping, then flattening the result
 - can flatten only one level
 - improves performance by combining `.flat` and `.map` methods into one method
+
+## **Extract Array Indices**
+
+- two ways to return an element's index:
+  - based on the value
+  - based on a test condition
+
+### **`.indexOf()`**
+
+- returns the first index location of the element value passed in
+- returns -1 if the element is not present
+
+- _Example:_
+
+```
+const allCats = ['Tabby', 'Siamese', 'Burmese', 'Ragdoll', 'Angora', 'Persian']
+
+console.log(allCats.indexOf('Angora')); // returns 4
+```
+
+### **`.findIndex()`**
+
+- returns the index of the first element to match a passed in condition
+- returns -1 if the condition is not met by any of the elements
+
+- _Example:_
+
+```
+const allCats = ['Siamese', 'Burmese', 'Ragdoll', 'Maine Coon', 'Tabby', 'Persian']
+
+const shortName = (name) => name.length < 6
+
+console.log(allCats.findIndex(shortName)); // returns 4
+
+const longName = (name) => name.length > 12
+
+console.log(allCats.findIndex(longName)); // returns -1
+```
+
+## **Extract Array Element**
+
+### **`.find()`**
+
+- returns the value of the first element to meet a test condition
+- returns -1 if the value is not present in the array
+
+- _Example:_
+
+```
+const allCats = ['Tabby', 'Siamese', 'Burmese', 'Ragdoll', 'Angora', 'Persian']
+
+const cutestCat = allCats.find(cute => cute ===
+'Ragdoll')
+
+console.log(cutestCat); // returns 'Ragdoll'
+```
+
+## **Determine if an array contains the element**
+
+### **`.includes()`**
+
+- similar to Boolean string method
+- determines whether a particular value is in the array
+- returns `true` or `false`
+
+Example:
+
+```
+const favoriteFoods = ['chicken', 'tuna', 'beef', 'cheese', 'salmon', 'shrimp', 'bacon'];
+
+console.log(favoriteFoods.includes('tuna'));
+// returns true
+console.log(favoriteFoods.includes('spiders'));
+// returns false
+```
+
+### **`.some()`**
+
+- determines whether at least one value in the array passes a test
+- returns `true` or `false`
+
+Example:
+
+```
+const catAges = [0.5, 1, 3, 5, 7, 11, 16.5]
+
+const hasKittens = age => age <= 1;
+
+console.log(catAges.some(hasKittens)) // returns true
+```
+
+### **`.every()`**
+
+- tests all values in the array with the callback function
+- returns `true` or `false`
+
+Example:
+
+```
+const catAges = [0.5, 1, 3, 5, 7, 11, 16.5]
+
+const adultCats = age => age >= 1;
+
+console.log(catAges.every(adultCats)) // returns false
+```
 
 ## Creating Methods
 
